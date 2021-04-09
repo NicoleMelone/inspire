@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <title>inspire</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand bg-transparent text-light">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" width="45" height="45" alt="" loading="lazy">
+                <span class="ml-2">inspire</span>
+            </a>
+        </nav>
+    </header>
+    <main class="container-fluid">
+        <div class="col-md-4 mb-3">
+            <div class="list-card shadow bg-white text-center rounded">
+                <div class="text-center p-2">
+                    <div class="d-flex flex-column text-center">
+                        <div class="d-flex flex-column justify-content-start text-center">
+                            <span class="d-flex justify-content-start text-center">
+                                <h3>Todo!</h3>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <ul id="todos">
+
+                    </ul>
+                </div>
+                <form class="d-flex p-2" onsubmit="app.todosController.addTodo()">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Todo"
+                        aria-describedby="helpId" required minlength="3" maxlength="50">
+                    <button type="submit" class="btn btn-success ml-2" title='add todo'><i
+                            class="fas fa-plus"></i></button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+    <footer class="container-fluid bg-transparent text-light">
+        <div class="row text-center quotes" id="quotes">
+
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
