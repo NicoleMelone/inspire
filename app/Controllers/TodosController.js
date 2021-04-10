@@ -7,7 +7,7 @@ function _draw() {
     if (todos.length == 0) {
         template += `<div class="col text-center"><p><em>You are all caught up!</em><p></div>`
     }
-    todos.forEach(t => template += t.Template)
+    todos.forEach(todo => template += todo.Template)
     document.getElementById('todos').innerHTML = template
 }
 
@@ -15,24 +15,48 @@ export default class TodosController {
     constructor() {
         ProxyState.on('todos', _draw)
         _draw()
+        this.getTodos()
     }
 
-    addTodo() {
-        window.event.preventDefault()
-        let form = window.event.target
-        let rawTodo = {
-            name: form.name.value
+    async getTodos() {
+        try {
+            await todosService.getTodos()
+        } catch (error) {
+            console.error(error)
         }
-        todosService.addTodo(rawTodo)
-        form.reset()
     }
 
-    deleteTodo(id) {
-        todosService.deleteTodo(id)
+    async addTodo() {
+        try {
+            window.event.preventDefault()
+            const form = window.event.target
+            let newTodo = {
+                description: form.description.value,
+                id: form.id.value,
+                user: form.user.value,
+                checked: form.checked.bool
+            }
+            await todosService.addTodo(newTodo)
+            form.reset()
+        } catch (error) {
+            console.error(error)
+        }
     }
 
-    completed(bool, id) {
-        todosService.completed(bool, id)
+    async deleteTodo(id) {
+        try {
+            todosService.deleteTodo(id)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async completed(bool, id) {
+        try {
+            todosService.completed(bool, id)
+        } catch (error) {
+            console.error(error)
+        }
     }
 
 }

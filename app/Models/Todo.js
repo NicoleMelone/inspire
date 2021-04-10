@@ -1,11 +1,12 @@
 import { ProxyState } from "../AppState.js";
-import { generateId } from "../Utils/GenerateId.js";
+
 
 export default class Todo {
-    constructor(name, id = generateId(), checked = false) {
-        this.id = id
-        this.name = name
-        this.checked = checked
+    constructor({ description, user, _id, completed = false }) {
+        this.description = description
+        this.id = _id
+        this.user = user
+        this.checked = completed
     }
 
     get Template() {
