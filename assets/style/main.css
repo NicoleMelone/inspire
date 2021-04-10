@@ -10719,4 +10719,11 @@ body{
   }
 }
 
+.clock{
+  font-size: 150px;
+  width: 850px;
+  margin: 170px;
+  text-align: center;
+}
+
 /*# sourceMappingURL=main.css.map */
