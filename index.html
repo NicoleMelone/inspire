@@ -24,8 +24,6 @@
     </header>
     <main class="container-fluid">
 
-
-        </div>
         <div class="row">
             <div class="col clock" id="clock" onload="app.clocksController.showTime()">
 
@@ -42,7 +40,7 @@
                     <div class="text-center p-2">
                         <div class="d-flex flex-column text-center">
                             <div class="d-flex flex-column justify-content-start text-center">
-                                <span class="d-flex justify-content-start text-center">
+                                <span class="d-flex justify-content-center bg-info text-center">
                                     <h3>Todo!</h3>
                                 </span>
 
@@ -55,7 +53,7 @@
                         </ul>
                     </div>
                     <form class="d-flex p-2" onsubmit="app.todosController.addTodo()">
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Todo"
+                        <input type="text" name="name" id="description" class="form-control" placeholder="Todo"
                             aria-describedby="helpId" required minlength="3" maxlength="50">
                         <button type="submit" class="btn btn-success ml-2" title='add todo'><i
                                 class="fas fa-plus"></i></button>

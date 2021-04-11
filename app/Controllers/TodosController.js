@@ -1,9 +1,13 @@
 import { ProxyState } from "../AppState.js";
 import { todosService } from "../Services/TodosService.js";
 
+
 function _draw() {
     let todos = ProxyState.todos;
+    let total = ProxyState.todos.length
+    let comp = ProxyState.todos.filter(t => t.checked == false).length
     let template = ''
+    template += `<div class="p-1">${comp}/${total} remaining!</div>`
     if (todos.length == 0) {
         template += `<div class="col text-center"><p><em>You are all caught up!</em><p></div>`
     }
@@ -32,9 +36,9 @@ export default class TodosController {
             const form = window.event.target
             let newTodo = {
                 description: form.description.value,
-                id: form.id.value,
-                user: form.user.value,
-                checked: form.checked.bool
+                // id: form.id.value,
+                // user: form.user.value,
+                // checked: form.checked.bool
             }
             await todosService.addTodo(newTodo)
             form.reset()
@@ -45,7 +49,7 @@ export default class TodosController {
 
     async deleteTodo(id) {
         try {
-            todosService.deleteTodo(id)
+            await todosService.deleteTodo(id)
         } catch (error) {
             console.error(error)
         }
