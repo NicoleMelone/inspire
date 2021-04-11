@@ -22,10 +22,15 @@ class TodosService {
         ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
     }
 
-    async completed(bool, id) {
+    async completed(id) {
 
-        ProxyState.todos.find(todo => id == todo.id).checked = bool
-        await sandboxApi.put('todos/' + id, { checked: Todo.completed })
+        let todo = ProxyState.todos.find(todo => id == todo.id)
+        if (todo.completed == true) {
+            todo.completed = false
+        } else if (todo.completed == false) {
+            todo.completed = true
+        }
+        await sandboxApi.put('todos/' + id, todo)
         ProxyState.todos = ProxyState.todos
     }
 }

@@ -5,7 +5,7 @@ import { todosService } from "../Services/TodosService.js";
 function _draw() {
     let todos = ProxyState.todos;
     let total = ProxyState.todos.length
-    let comp = ProxyState.todos.filter(t => t.checked == false).length
+    let comp = ProxyState.todos.filter(t => t.completed == false).length
     let template = ''
     template += `<div class="p-1">${comp}/${total} remaining!</div>`
     if (todos.length == 0) {
@@ -55,9 +55,9 @@ export default class TodosController {
         }
     }
 
-    async completed(bool, id) {
+    async completed(id) {
         try {
-            todosService.completed(bool, id)
+            todosService.completed(id)
         } catch (error) {
             console.error(error)
         }

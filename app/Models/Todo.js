@@ -7,13 +7,13 @@ export default class Todo {
         this.description = description
         this.user = user
         this.id = _id
-        this.checked = completed
+        this.completed = completed
     }
 
     get Template() {
 
         return `
-        <li class="list-group-item"><input class="mr-2" type="checkbox" aria-label="Todo Checkbox" id="box" onclick="app.todosController.completed(this.checked, '${this.id}')" ${this.checked ? 'checked' : ''}> ${this.description} <button type="button" class="btn-sm btn-danger" onclick="app.todosController.deleteTodo('${this.id}')">Delete</button></li> `
+        <li class="list-group-item"><input class="mr-2" type="checkbox" aria-label="Todo Checkbox" id="box" onclick="app.todosController.completed('${this.id}')" ${this.completed ? 'checked' : ''}> ${this.description} <button type="button" class="btn-sm btn-danger" onclick="app.todosController.deleteTodo('${this.id}')">Delete</button></li> `
     }
 
 }
