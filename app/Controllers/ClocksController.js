@@ -4,7 +4,9 @@ import { clocksService } from "../Services/ClocksService.js";
 
 
 export default class ClocksController {
-
+    constructor() {
+        this.showTime()
+    }
 
 
     showTime() {
