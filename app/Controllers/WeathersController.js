@@ -4,6 +4,7 @@ import { weathersService } from "../Services/WeathersService.js";
 
 function _draw() {
     document.getElementById('weathers').innerHTML = ProxyState.weathers.Template
+
 }
 
 export default class WeathersController {

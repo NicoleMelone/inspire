@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar navbar-dark navbar-expand bg-transparent text-light d-flex justify-content-end ml-auto">
             <a class="navbar-brand" href="#">
-                <div class="p-3 text-light" id="weathers">
+                <div class="p-3 text-light" id="weathers" onclick="app.weathersController.toggleWeather()">
                 </div>
             </a>
         </nav>
@@ -23,7 +23,8 @@
     <main class="container-fluid">
         <div class="row">
             <div class="col clock d-flex justify-content-center" id="clock" onload="app.clocksController.showTime()">
-                <h2>Be inspired.</h2>
+
+                <h2 class="border-bottom border-white text-white">Be inspired.</h2>
             </div>
         </div>
         <div class="row d-flex justify-content-end align-items-end ml-auto">

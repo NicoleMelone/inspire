@@ -9,7 +9,11 @@ class WeathersService {
     }
 
     async toggleWeather() {
-
+        if (ProxyState.weathers.Template) {
+            document.getElementById('weathers').innerHTML = ProxyState.weathers.CelTemplate
+        } else if (ProxyState.weathers.CelTemplate) {
+            document.getElementById('weathers').innerHTML = ProxyState.weathers.Template
+        }
 
         this.getWeather()
     }

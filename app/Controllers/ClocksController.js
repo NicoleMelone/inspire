@@ -1,16 +1,16 @@
-// import { ProxyState } from "../AppState.js";
-// import { clocksService } from "../Services/ClocksService.js";
+import { ProxyState } from "../AppState.js";
+import { clocksService } from "../Services/ClocksService.js";
 
 
 
-// export default class ClocksController {
+export default class ClocksController {
 
 
 
-    // getClock() {
+    showTime() {
 
-    //     clocksService.showTime()
+        clocksService.showTime()
 
-    // }
+    }
 
-// }
+}
