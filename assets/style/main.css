@@ -10719,6 +10719,14 @@ body{
   }
 }
 
+.fun-font{
+  font-family: 'Lobster', cursive;
+}
+
+.quote-font{
+  font-family: cursive;
+}
+
 .clock{
   font-size: 70px;
   width: 150px;

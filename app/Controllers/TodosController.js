@@ -9,7 +9,7 @@ function _draw() {
     let template = ''
     template += `<div class="p-1">${comp}/${total} remaining!</div>`
     if (todos.length == 0) {
-        template += `<div class="col text-center"><p><em>You are all caught up!</em><p></div>`
+        template += `<div class="col text-center"><p><em>Boom!</em><p></div>`
     }
     todos.forEach(todo => template += todo.Template)
     document.getElementById('todos').innerHTML = template
